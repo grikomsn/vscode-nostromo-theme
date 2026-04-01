@@ -2,7 +2,7 @@
   "name": "nostromo-theme-pack",
   "displayName": "Nostromo Theme Pack (4 Variants)",
   "description": "A retro-futuristic VS Code theme inspired by the Nostromo spacecraft UI from Alien",
-  "version": "1.0.2",
+  "version": "0.0.0",
   "publisher": "grikomsn",
   "engines": {
     "vscode": "^1.74.0"
