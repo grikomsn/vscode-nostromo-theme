@@ -1,0 +1,57 @@
+{
+  "name": "nostromo-theme",
+  "displayName": "Nostromo Theme",
+  "description": "A retro-futuristic VS Code theme inspired by the Nostromo spacecraft UI from Alien",
+  "version": "1.0.0",
+  "publisher": "grikomsn",
+  "engines": {
+    "vscode": "^1.74.0"
+  },
+  "categories": ["Themes"],
+  "keywords": ["theme", "color-theme", "nostromo", "alien", "retro", "crt", "sci-fi", "dark", "light"],
+  "galleryBanner": {
+    "color": "#141D22",
+    "theme": "dark"
+  },
+  "icon": "images/icon-256w.png",
+  "contributes": {
+    "themes": [
+      {
+        "label": "Nostromo Theme Dark",
+        "uiTheme": "vs-dark",
+        "path": "./themes/nostromo-dark-color-theme.json"
+      },
+      {
+        "label": "Nostromo Theme Dark (Modern)",
+        "uiTheme": "vs-dark",
+        "path": "./themes/nostromo-dark-modern-color-theme.json"
+      },
+      {
+        "label": "Nostromo Theme Light",
+        "uiTheme": "vs",
+        "path": "./themes/nostromo-light-color-theme.json"
+      },
+      {
+        "label": "Nostromo Theme Light (Modern)",
+        "uiTheme": "vs",
+        "path": "./themes/nostromo-light-modern-color-theme.json"
+      }
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/grikomsn/vscode-nostromo-theme.git"
+  },
+  "bugs": {
+    "url": "https://github.com/grikomsn/vscode-nostromo-theme/issues"
+  },
+  "homepage": "https://github.com/grikomsn/vscode-nostromo-theme#readme",
+  "license": "MIT",
+  "scripts": {
+    "deploy": "vsce publish --yarn",
+    "package": "vsce package"
+  },
+  "devDependencies": {
+    "@vscode/vsce": "^2.24.0"
+  }
+}

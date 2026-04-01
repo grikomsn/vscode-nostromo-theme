@@ -1,0 +1,60 @@
+{
+  "name": "nostromo-theme-demo",
+  "version": "1.0.0",
+  "description": "Demo configuration for Nostromo Theme showcase",
+  "private": true,
+  "scripts": {
+    "build": "tsc --build",
+    "test": "jest --coverage",
+    "lint": "eslint . --ext .ts,.tsx,.js,.jsx",
+    "format": "prettier --write ."
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "lodash": "^4.17.21"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.0",
+    "@types/node": "^20.0.0",
+    "typescript": "^5.0.0",
+    "eslint": "^8.0.0",
+    "jest": "^29.0.0",
+    "prettier": "^3.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "keywords": [
+    "nostromo",
+    "demo",
+    "theme",
+    "alien",
+    "sci-fi"
+  ],
+  "author": {
+    "name": "Griko Nibras",
+    "email": "grikomsn@example.com"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/grikomsn/vscode-nostromo-theme"
+  },
+  "bugs": {
+    "url": "https://github.com/grikomsn/vscode-nostromo-theme/issues"
+  },
+  "config": {
+    "port": 3000,
+    "debug": false
+  },
+  "null_value": null,
+  "empty_array": [],
+  "nested_object": {
+    "level1": {
+      "level2": {
+        "level3": "deeply nested value"
+      }
+    }
+  }
+}
