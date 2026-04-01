@@ -1,9 +1,9 @@
-# Nostromo Theme
+# Nostromo Theme Pack
 
-A retro-futuristic VS Code theme inspired by the Nostromo spacecraft UI from the 1979 film _Alien_.
+A retro-futuristic VS Code theme pack featuring four meticulously crafted variants, inspired by the Nostromo spacecraft UI from the 1979 film _Alien_.
 
-[![Version](https://img.shields.io/visual-studio-marketplace/v/grikomsn.nostromo-theme)](https://marketplace.visualstudio.com/items?itemName=grikomsn.nostromo-theme)
-[![Downloads](https://img.shields.io/visual-studio-marketplace/d/grikomsn.nostromo-theme)](https://marketplace.visualstudio.com/items?itemName=grikomsn.nostromo-theme)
+[![Version](https://img.shields.io/visual-studio-marketplace/v/grikomsn.nostromo-theme-pack)](https://marketplace.visualstudio.com/items?itemName=grikomsn.nostromo-theme-pack)
+[![Downloads](https://img.shields.io/visual-studio-marketplace/d/grikomsn.nostromo-theme-pack)](https://marketplace.visualstudio.com/items?itemName=grikomsn.nostromo-theme-pack)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
 ## Themes
@@ -36,15 +36,23 @@ A modern light variant with a clean, slightly off-white background (`#FAFBFC`) f
 
 ## Installation
 
-1. Open **Extensions** sidebar panel in VS Code. `View → Extensions`
-2. Search for `Nostromo Theme`
-3. Click **Install** to install it.
-4. Click **Reload** to reload VS Code.
-5. Navigate to `File > Preferences > Color Theme` or use `⌘/Ctrl+K ⌘/Ctrl+T` to select the theme.
+### From VSCode Marketplace
+
+1. Open **Extensions** sidebar panel in VS Code (`View → Extensions` or `Cmd/Ctrl+Shift+X`)
+2. Search for **"Nostromo Theme Pack"**
+3. Click **Install** to install it
+4. Click **Reload** to reload VS Code
+5. Navigate to `File > Preferences > Color Theme` or use `⌘/Ctrl+K ⌘/Ctrl+T` to select the theme:
    - `Nostromo Theme Dark`
    - `Nostromo Theme Dark (Modern)`
    - `Nostromo Theme Light`
    - `Nostromo Theme Light (Modern)`
+
+### From Command Line
+
+```bash
+code --install-extension grikomsn.nostromo-theme-pack
+```
 
 ## Color Palette
 
@@ -94,7 +102,7 @@ A modern light variant with a clean, slightly off-white background (`#FAFBFC`) f
 
 ## Design Philosophy
 
-The Nostromo Theme is designed to be:
+The Nostromo Theme Pack is designed to be:
 
 - **Mono-hue with minimal distractions**: A cohesive color scheme that reduces visual fatigue
 - **Retro-futuristic**: Inspired by the industrial computer interfaces of the 1970s
