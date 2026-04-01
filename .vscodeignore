@@ -1,11 +1,32 @@
+# Development & Config
 .vscode/**
 .vscode-test/**
-.gitignore
 .github/**
+.gitignore
 
+# Build artifacts
 *.vsix
+
+# Dependencies
 node_modules/**
 
+# Documentation & Website (not needed in extension)
+docs/**
+
+# Scripts (not needed in extension)
+scripts/**
+
+# Demo files
+demos/**
+samples/**
+
+# Logs
+*.log
+
+# Backup files created during packaging
+.README.full.md
+
+# Keep only essential images
 images/**
 !images/icon-256w.png
 !images/icon-512w.png
@@ -13,8 +34,3 @@ images/**
 !images/nostromo-dark-modern-color-theme.png
 !images/nostromo-light-color-theme.png
 !images/nostromo-light-modern-color-theme.png
-
-demos/**
-samples/**
-
-*.log

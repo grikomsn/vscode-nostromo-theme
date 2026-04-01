@@ -6,6 +6,38 @@ A retro-futuristic VS Code theme pack featuring four meticulously crafted varian
 [![Downloads](https://img.shields.io/visual-studio-marketplace/d/grikomsn.nostromo-theme-pack)](https://marketplace.visualstudio.com/items?itemName=grikomsn.nostromo-theme-pack)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
+<!-- MARKETPLACE-START -->
+
+## Quick Start
+
+### Installation
+
+Install from [VSCode Marketplace](https://marketplace.visualstudio.com/items?itemName=grikomsn.nostromo-theme-pack) or run:
+
+```bash
+code --install-extension grikomsn.nostromo-theme-pack
+```
+
+### Activation
+
+Use `⌘/Ctrl+K ⌘/Ctrl+T` and select a theme variant:
+- **Dark** - Deep teal background (#141D22) with CRT aesthetic
+- **Dark (Modern)** - Charcoal background (#1A2026), polished look
+- **Light** - Warm cream/amber background (#F5F0E6)
+- **Light (Modern)** - Clean off-white background (#FAFBFC)
+
+![Theme Preview](images/nostromo-dark-color-theme.png)
+
+---
+
+📖 **[Full Documentation](https://github.com/grikomsn/vscode-nostromo-theme#readme)** • 
+🐛 **[Report Issues](https://github.com/grikomsn/vscode-nostromo-theme/issues)** • 
+🌐 **[Live Preview](https://nostromo.nbr.st)**
+
+<!-- MARKETPLACE-END -->
+
+<!-- GITHUB-ONLY -->
+
 ## Themes
 
 This extension includes four themes that capture the aesthetic of 1970s sci-fi computer interfaces:
@@ -144,3 +176,5 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 ## License
 
 [MIT](LICENSE)
+
+<!-- GITHUB-ONLY-END -->

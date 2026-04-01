@@ -48,8 +48,11 @@
   "homepage": "https://github.com/grikomsn/vscode-nostromo-theme#readme",
   "license": "MIT",
   "scripts": {
-    "deploy": "vsce publish",
-    "package": "vsce package"
+    "prepackage": "node scripts/prepare-marketplace.js",
+    "package": "vsce package",
+    "postpackage": "mv .README.full.md README.md && echo '✓ Restored full README.md'",
+    "deploy": "node scripts/prepare-marketplace.js && vsce publish && mv .README.full.md README.md",
+    "restore-readme": "mv .README.full.md README.md && echo '✓ Restored full README.md'"
   },
   "devDependencies": {
     "@vscode/vsce": "^2.24.0"
