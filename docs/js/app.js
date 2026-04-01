@@ -1,165 +1,154 @@
 /**
- * Nostromo Theme - Monaco Editor Loader
- * Provides live theme preview functionality
+ * Nostromo Theme - Monaco Editor App
+ * Live theme preview with working theme toggles
  */
 
 (function() {
   'use strict';
-
-  // Monaco Editor instance
-  let editor = null;
-  let isMonacoLoaded = false;
 
   // Sample TypeScript code for preview
   const sampleCode = `/**
  * NOSTROMO - Commercial Towing Vehicle
  * Registration: 180924609
  * 
- * A retro-futuristic theme inspired by the Alien universe
+ * A retro-futuristic theme inspired by 1970s sci-fi interfaces
  */
 
-import { Spacecraft } from 'uscss-nostromo';
+import { Spacecraft } from './types';
 
 class Nostromo extends Spacecraft {
-    private crew: CrewMember[];
-    private cargo: MineralOre[];
-    private status: ShipStatus;
+  private crew: CrewMember[];
+  private cargo: MineralOre[];
+  private status: ShipStatus;
+
+  constructor(registry: string) {
+    super(registry);
+    this.crew = [];
+    this.cargo = [];
+    this.status = 'DOCKED';
+  }
+
+  // Lifecycle methods
+  public async wakeCrew(): Promise<void> {
+    console.log("Mother: Crew awakening initiated...");
     
-    constructor(registry: string) {
-        super(registry);
-        this.crew = [];
-        this.cargo = [];
-        this.status = ShipStatus.DOCKED;
+    for (const member of this.crew) {
+      await member.revive();
+      this.log(\`Crew \${member.name} revived\`);
     }
     
-    // Lifecycle functions
-    public async wakeCrew(): Promise<void> {
-        console.log("Mother: Crew awakening initiated...");
-        
-        for (const member of this.crew) {
-            await member.revive();
-            this.logAction(\`Crew member \${member.name} revived\`);
-        }
-        
-        this.status = ShipStatus.ACTIVE;
+    this.status = 'ACTIVE';
+  }
+
+  public async investigate(coords: Coordinates): Promise<Discovery> {
+    const discovery = await this.scan(coords);
+    
+    if (discovery.type === 'XENOMORPH') {
+      this.alert("DANGER: Unknown lifeform detected!");
+      this.status = 'DISTRESS';
     }
     
-    public investigateSignal(coordinates: Coordinates): Promise<Discovery> {
-        // Sometimes it's best to not investigate...
-        return new Promise((resolve, reject) => {
-            const discovery = this.explore(coordinates);
-            
-            if (discovery.type === LifeformType.XENOMORPH) {
-                this.logWarning("DANGER: Unknown lifeform detected!");
-                this.status = ShipStatus.DISTRESS;
-            }
-            
-            resolve(discovery);
-        });
-    }
-    
-    // Syntax highlighting demonstration
-    private logAction(message: string): void {
-        const timestamp = new Date().toISOString();
-        const entry: LogEntry = {
-            timestamp,
-            level: LogLevel.INFO,
-            message,
-            source: 'NOSTROMO_SYSTEM'
-        };
-        
-        this.systemLogs.push(entry);
-    }
-    
-    // String interpolation
-    public getStatus(): string {
-        return \`Ship: Nostromo
+    return discovery;
+  }
+
+  // Utility methods
+  private log(message: string): void {
+    const entry = {
+      timestamp: new Date().toISOString(),
+      level: 'INFO',
+      message,
+      source: 'NOSTROMO'
+    };
+    this.systemLogs.push(entry);
+  }
+
+  public getStatusReport(): string {
+    return \`Ship: Nostromo
+Registry: \${this.registry}
 Status: \${this.status}
 Crew: \${this.crew.length} members
-Cargo: \${this.cargo.length} tons
-Location: \${this.currentLocation}\`;
-    }
+Cargo: \${this.cargo.length} tons\`;
+  }
 }
 
-// Initialize the ship
+// Initialize
 const nostromo = new Nostromo("180924609");
 export default nostromo;`;
 
-  // Theme definitions for Monaco
-  const themes = {
+  // Theme definitions matching VSCode theme files
+  const themeDefinitions = {
     'nostromo-dark': {
       base: 'vs-dark',
       inherit: true,
       rules: [
-        { token: 'comment', foreground: '6ba3a5', fontStyle: 'italic' },
-        { token: 'comment.doc', foreground: '6ba3a5', fontStyle: 'italic' },
-        { token: 'keyword', foreground: 'dd513c' },
-        { token: 'keyword.control', foreground: 'dd513c' },
+        { token: 'comment', foreground: '6B8A8C', fontStyle: 'italic' },
+        { token: 'keyword', foreground: 'E85A45' },
+        { token: 'keyword.control', foreground: 'E85A45' },
         { token: 'keyword.operator', foreground: 'A5FBFF' },
         { token: 'operator', foreground: 'A5FBFF' },
-        { token: 'namespace', foreground: '3df2ad' },
+        { token: 'namespace', foreground: '3DF2AD' },
         { token: 'variable', foreground: 'A5FBFF' },
-        { token: 'variable.parameter', foreground: '92dde1' },
-        { token: 'variable.readonly', foreground: '3df2ad' },
+        { token: 'variable.parameter', foreground: '92DDE1' },
+        { token: 'variable.readonly', foreground: '3DF2AD' },
         { token: 'type', foreground: '4DDCFF' },
         { token: 'class', foreground: '4DDCFF' },
         { token: 'interface', foreground: '4DDCFF' },
-        { token: 'function', foreground: '3df2ad' },
-        { token: 'function.call', foreground: '3df2ad' },
-        { token: 'string', foreground: '3f9bbc' },
-        { token: 'string.escape', foreground: 'eb78c3' },
+        { token: 'function', foreground: '3DF2AD' },
+        { token: 'function.call', foreground: '3DF2AD' },
+        { token: 'string', foreground: '3F9BBC' },
+        { token: 'string.escape', foreground: 'EB78C3' },
         { token: 'number', foreground: '4DDCFF' },
-        { token: 'constant', foreground: '3df2ad' },
-        { token: 'property', foreground: '92dde1' },
-        { token: 'property.readonly', foreground: '3df2ad' },
+        { token: 'constant', foreground: '3DF2AD' },
+        { token: 'property', foreground: '92DDE1' },
+        { token: 'property.readonly', foreground: '3DF2AD' },
         { token: 'decorator', foreground: 'FFFF84' },
-        { token: 'tag', foreground: 'dd513c' },
-        { token: 'attribute.name', foreground: '3df2ad' },
-        { token: 'attribute.value', foreground: '3f9bbc' },
-        { token: 'invalid', foreground: 'dd513c' },
+        { token: 'tag', foreground: 'E85A45' },
+        { token: 'attribute.name', foreground: '3DF2AD' },
+        { token: 'attribute.value', foreground: '3F9BBC' },
+        { token: 'invalid', foreground: 'E85A45' },
         { token: 'meta', foreground: 'A5FBFF' },
         { token: 'regexp', foreground: 'FFFF84' },
       ],
       colors: {
         'editor.background': '#141D22',
         'editor.foreground': '#A5FBFF',
-        'editorLineNumber.foreground': '#3a4c4e',
+        'editorLineNumber.foreground': '#3A4C4E',
         'editorLineNumber.activeForeground': '#A5FBFF',
         'editorCursor.foreground': '#A5FBFF',
-        'editor.lineHighlightBackground': '#1a252b',
+        'editor.lineHighlightBackground': '#1A252B',
         'editor.lineHighlightBorder': '#154547',
         'editor.selectionBackground': '#154547',
-        'editor.selectionHighlightBackground': '#1e2f33',
+        'editor.selectionHighlightBackground': '#1E2F33',
         'editor.findMatchBackground': '#365878',
         'editor.findMatchHighlightBackground': '#36587880',
         'editorBracketMatch.background': '#154547',
-        'editorBracketMatch.border': '#3f9bbc',
+        'editorBracketMatch.border': '#3F9BBC',
         'editorHoverWidget.background': '#141D22',
         'editorHoverWidget.border': '#154547',
         'editorWidget.background': '#141D22',
         'editorWidget.border': '#154547',
         'editorSuggestWidget.background': '#141D22',
         'editorSuggestWidget.border': '#154547',
-        'editorSuggestWidget.highlightForeground': '#3df2ad',
+        'editorSuggestWidget.highlightForeground': '#3DF2AD',
         'editorSuggestWidget.selectedBackground': '#154547',
-        'editorIndentGuide.background': '#1a252b',
-        'editorIndentGuide.activeBackground': '#3f9bbc',
-        'editorRuler.foreground': '#1a252b',
-        'editorCodeLens.foreground': '#3a4c4e',
+        'editorIndentGuide.background': '#1A252B',
+        'editorIndentGuide.activeBackground': '#3F9BBC',
+        'editorRuler.foreground': '#1A252B',
+        'editorCodeLens.foreground': '#3A4C4E',
       }
     },
     'nostromo-dark-modern': {
       base: 'vs-dark',
       inherit: true,
       rules: [
-        { token: 'comment', foreground: '5a8c8d', fontStyle: 'italic' },
+        { token: 'comment', foreground: '5A8C8D', fontStyle: 'italic' },
         { token: 'keyword', foreground: 'E85A45' },
         { token: 'keyword.control', foreground: 'E85A45' },
         { token: 'keyword.operator', foreground: 'A5FBFF' },
         { token: 'operator', foreground: 'A5FBFF' },
         { token: 'namespace', foreground: '4DFFA8' },
-        { token: 'variable', foreground: 'A5FBFF' },
-        { token: 'variable.parameter', foreground: '9AEBF0' },
+        { token: 'variable', foreground: '#D4EBF0' },
+        { token: 'variable.parameter', foreground: '#9AEBF0' },
         { token: 'variable.readonly', foreground: '4DFFA8' },
         { token: 'type', foreground: '7AEBFF' },
         { token: 'class', foreground: '7AEBFF' },
@@ -170,22 +159,22 @@ export default nostromo;`;
         { token: 'string.escape', foreground: 'F090D0' },
         { token: 'number', foreground: '7AEBFF' },
         { token: 'constant', foreground: '4DFFA8' },
-        { token: 'property', foreground: '9AEBF0' },
+        { token: 'property', foreground: '#9AEBF0' },
         { token: 'property.readonly', foreground: '4DFFA8' },
         { token: 'decorator', foreground: 'D4C440' },
         { token: 'tag', foreground: 'E85A45' },
         { token: 'attribute.name', foreground: '4DFFA8' },
         { token: 'attribute.value', foreground: '5AC0FF' },
         { token: 'invalid', foreground: 'E85A45' },
-        { token: 'meta', foreground: 'A5FBFF' },
+        { token: 'meta', foreground: '#D4EBF0' },
         { token: 'regexp', foreground: 'D4C440' },
       ],
       colors: {
         'editor.background': '#1A2026',
-        'editor.foreground': '#A5FBFF',
+        'editor.foreground': '#D4EBF0',
         'editorLineNumber.foreground': '#4A5A5C',
-        'editorLineNumber.activeForeground': '#A5FBFF',
-        'editorCursor.foreground': '#A5FBFF',
+        'editorLineNumber.activeForeground': '#D4EBF0',
+        'editorCursor.foreground': '#D4EBF0',
         'editor.lineHighlightBackground': '#252D35',
         'editor.lineHighlightBorder': '#35454A',
         'editor.selectionBackground': '#35454A',
@@ -213,7 +202,6 @@ export default nostromo;`;
       inherit: true,
       rules: [
         { token: 'comment', foreground: '8A9A9C', fontStyle: 'italic' },
-        { token: 'comment.doc', foreground: '8A9A9C', fontStyle: 'italic' },
         { token: 'keyword', foreground: 'B54230' },
         { token: 'keyword.control', foreground: 'B54230' },
         { token: 'keyword.operator', foreground: '0D3D3F' },
@@ -274,7 +262,6 @@ export default nostromo;`;
       inherit: true,
       rules: [
         { token: 'comment', foreground: '8A9A9C', fontStyle: 'italic' },
-        { token: 'comment.doc', foreground: '8A9A9C', fontStyle: 'italic' },
         { token: 'keyword', foreground: 'B54230' },
         { token: 'keyword.control', foreground: 'B54230' },
         { token: 'keyword.operator', foreground: '0D3D3F' },
@@ -333,43 +320,31 @@ export default nostromo;`;
   };
 
   // Initialize Monaco Editor
-  async function initMonaco() {
-    if (isMonacoLoaded) return;
-    
-    const container = document.getElementById('editor-container');
-    if (!container) return;
+  function initMonaco() {
+    // Configure Monaco AMD loader
+    require.config({
+      paths: {
+        'vs': 'https://cdn.jsdelivr.net/npm/monaco-editor@0.55.0/min/vs'
+      }
+    });
 
-    try {
-      // Dynamic import of Monaco from CDN
-      const monaco = await import('https://cdn.jsdelivr.net/npm/monaco-editor@0.55.1/esm/vs/editor/editor.main.js');
-      
-      // Configure workers
-      self.MonacoEnvironment = {
-        getWorkerUrl: function(moduleId, label) {
-          const baseUrl = 'https://cdn.jsdelivr.net/npm/monaco-editor@0.55.1/esm/vs';
-          const workers = {
-            'json': `${baseUrl}/language/json/json.worker.js`,
-            'css': `${baseUrl}/language/css/css.worker.js`,
-            'html': `${baseUrl}/language/html/html.worker.js`,
-            'typescript': `${baseUrl}/language/typescript/ts.worker.js`,
-            'javascript': `${baseUrl}/language/typescript/ts.worker.js`
-          };
-          return workers[label] || `${baseUrl}/editor/editor.worker.js`;
-        }
-      };
+    // Load Monaco Editor
+    require(['vs/editor/editor.main'], function() {
+      const container = document.getElementById('editor');
+      if (!container) return;
 
       // Define all themes
-      Object.entries(themes).forEach(([name, themeData]) => {
+      Object.entries(themeDefinitions).forEach(([name, themeData]) => {
         monaco.editor.defineTheme(name, themeData);
       });
 
       // Create editor instance
-      editor = monaco.editor.create(container, {
+      const editor = monaco.editor.create(container, {
         value: sampleCode,
         language: 'typescript',
         theme: 'nostromo-dark',
         automaticLayout: true,
-        minimap: { 
+        minimap: {
           enabled: true,
           scale: 1,
           renderCharacters: false
@@ -398,116 +373,32 @@ export default nostromo;`;
         }
       });
 
-      isMonacoLoaded = true;
-      
       // Initialize theme switcher
-      initThemeSwitcher();
-      
-    } catch (error) {
-      console.error('Failed to load Monaco Editor:', error);
-      container.innerHTML = '<div style="padding: 40px; text-align: center; color: #6ba3a5;">' +
-        '<p>⚠ Editor preview temporarily unavailable</p>' +
-        '<p style="font-size: 0.85rem;">Install the extension to see the theme in action</p>' +
-        '</div>';
-    }
+      initThemeSwitcher(editor);
+    });
   }
 
   // Theme switcher functionality
-  function initThemeSwitcher() {
+  function initThemeSwitcher(editor) {
     const buttons = document.querySelectorAll('.theme-btn');
     
     buttons.forEach(button => {
       button.addEventListener('click', () => {
         // Update active state
-        buttons.forEach(btn => {
-          btn.classList.remove('active');
-          btn.setAttribute('aria-selected', 'false');
-        });
+        buttons.forEach(btn => btn.classList.remove('active'));
         button.classList.add('active');
-        button.setAttribute('aria-selected', 'true');
         
         // Switch theme
         const themeName = button.dataset.theme;
-        if (editor && window.monaco) {
-          window.monaco.editor.setTheme(themeName);
-        }
+        monaco.editor.setTheme(themeName);
       });
     });
   }
 
-  // Palette tabs functionality
-  function initPaletteTabs() {
-    const tabs = document.querySelectorAll('.palette-tab');
-    const grids = document.querySelectorAll('.palette-grid');
-    
-    tabs.forEach(tab => {
-      tab.addEventListener('click', () => {
-        // Update active tab
-        tabs.forEach(t => { t.classList.remove('active'); });
-        tab.classList.add('active');
-        
-        // Show corresponding grid
-        const paletteId = tab.dataset.palette;
-        grids.forEach(grid => { grid.classList.add('hidden'); });
-        document.getElementById(`palette-${paletteId}`).classList.remove('hidden');
-      });
-    });
-  }
-
-  // Intersection Observer for lazy loading Monaco
-  function setupLazyLoading() {
-    const container = document.getElementById('editor-container');
-    if (!container) return;
-    
-    // Check if IntersectionObserver is supported
-    if ('IntersectionObserver' in window) {
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting && !isMonacoLoaded) {
-            initMonaco();
-            observer.unobserve(entry.target);
-          }
-        });
-      }, {
-        threshold: 0.1,
-        rootMargin: '100px'
-      });
-      
-      observer.observe(container);
-    } else {
-      // Fallback: load immediately if IntersectionObserver not supported
-      initMonaco();
-    }
-  }
-
-  // Smooth scroll for navigation links
-  function setupSmoothScroll() {
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-          target.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
-          });
-        }
-      });
-    });
-  }
-
-  // Initialize everything when DOM is ready
-  function init() {
-    setupLazyLoading();
-    initPaletteTabs();
-    setupSmoothScroll();
-  }
-
-  // Run initialization
+  // Initialize when DOM is ready
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', init);
+    document.addEventListener('DOMContentLoaded', initMonaco);
   } else {
-    init();
+    initMonaco();
   }
-
 })();
