@@ -60,7 +60,16 @@ body {
   background: rgba(20, 29, 34, 0.95);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--nostromo-dark-border);
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
   padding: 0 var(--space-md);
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .nav-logo {
