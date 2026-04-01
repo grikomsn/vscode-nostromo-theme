@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <!-- Critical Meta -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+  <!-- Primary Meta -->
+  <title>Nostromo Theme - Retro-Futuristic VSCode Theme</title>
+  <meta name="description" content="Nostromo Theme: A meticulously crafted retro-futuristic theme for Visual Studio Code. Four variants: Dark, Dark Modern, Light, and Light Modern. Inspired by 1970s sci-fi computer interfaces.">
+  <meta name="keywords" content="vscode theme, dark theme, light theme, code editor theme, syntax highlighting, developer tools, visual studio code extension, retro, sci-fi, nostromo">
+  <meta name="author" content="Griko Nibras">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+  <meta name="googlebot" content="index, follow">
+  
+  <!-- Theme Color -->
+  <meta name="theme-color" content="#141D22" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#F5F0E6" media="(prefers-color-scheme: light)">
+  <meta name="color-scheme" content="dark light">
+  
+  <!-- Canonical -->
+  <link rel="canonical" href="https://nostromo.nbr.st/">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="Nostromo Theme - Retro-Futuristic VSCode Theme">
+  <meta property="og:description" content="A meticulously crafted retro-futuristic theme for Visual Studio Code. Four variants with high-contrast syntax highlighting.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://nostromo.nbr.st/">
+  <meta property="og:site_name" content="Nostromo Theme">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:image" content="https://nostromo.nbr.st/assets/og-image.png">
+  <meta property="og:image:secure_url" content="https://nostromo.nbr.st/assets/og-image.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Nostromo Theme screenshot showing syntax highlighting in Visual Studio Code">
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Nostromo Theme - Retro-Futuristic VSCode Theme">
+  <meta name="twitter:description" content="A meticulously crafted retro-futuristic theme for Visual Studio Code. Four variants with high-contrast syntax highlighting.">
+  <meta name="twitter:image" content="https://nostromo.nbr.st/assets/og-image.png">
+  <meta name="twitter:image:alt" content="Nostromo Theme screenshot showing syntax highlighting in Visual Studio Code">
+  
+  <!-- Performance Hints -->
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link rel="preconnect" href="https://marketplace.visualstudio.com">
+  <link rel="dns-prefetch" href="https://github.com">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="256x256" href="assets/icon-256w.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="assets/icon-512w.png">
+  <link rel="apple-touch-icon" href="assets/icon-512w.png">
+  
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/styles.css">
+  
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Nostromo Theme",
+    "description": "A meticulously crafted retro-futuristic theme for Visual Studio Code featuring high-contrast syntax highlighting and a 1970s sci-fi computer interface aesthetic.",
+    "applicationCategory": "DeveloperApplication",
+    "applicationSubCategory": "CodeEditorTheme",
+    "operatingSystem": "Windows, macOS, Linux",
+    "softwareVersion": "1.0.0",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD",
+      "description": "Free and open source"
+    },
+    "downloadUrl": "https://marketplace.visualstudio.com/items?itemName=grikomsn.nostromo-theme",
+    "installUrl": "vscode:extension/grikomsn.nostromo-theme",
+    "featureList": [
+      "Four theme variants: Dark, Dark Modern, Light, Light Modern",
+      "High-contrast syntax highlighting",
+      "Semantic highlighting support",
+      "Terminal color schemes",
+      "Optimized for long coding sessions"
+    ],
+    "programmingLanguage": [
+      "JavaScript",
+      "TypeScript",
+      "Python",
+      "Go",
+      "Rust",
+      "HTML",
+      "CSS",
+      "JSON",
+      "Markdown"
+    ],
+    "license": "https://opensource.org/licenses/MIT",
+    "datePublished": "2024-04-01",
+    "author": {
+      "@type": "Person",
+      "name": "Griko Nibras",
+      "url": "https://github.com/grikomsn"
+    },
+    "publisher": {
+      "@type": "Person",
+      "name": "Griko Nibras",
+      "url": "https://github.com/grikomsn"
+    },
+    "isAccessibleForFree": true,
+    "keywords": ["vscode theme", "dark theme", "light theme", "code editor theme", "syntax highlighting", "nostromo", "retro", "sci-fi"]
+  }
+  </script>
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Nostromo Theme",
+    "url": "https://nostromo.nbr.st/"
+  }
+  </script>
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  
+  <!-- Navigation -->
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="nav-container">
+      <a href="#" class="nav-logo" aria-label="Nostromo Theme Home">
+        <span class="nav-logo-icon">◈</span>
+        <span class="nav-logo-text">NOSTROMO</span>
+      </a>
+      <div class="nav-links">
+        <a href="#preview" class="nav-link">Preview</a>
+        <a href="#installation" class="nav-link">Install</a>
+        <a href="https://github.com/grikomsn/vscode-nostromo-theme" class="nav-link" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://marketplace.visualstudio.com/items?itemName=grikomsn.nostromo-theme" class="nav-cta" target="_blank" rel="noopener">Get Extension</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="hero" role="banner">
+    <div class="hero-container">
+      <div class="hero-badge">
+        <span class="badge">VSCode Extension</span>
+      </div>
+      <h1 class="hero-title">
+        <span class="text-cyan">NOSTROMO</span>
+        <span class="text-dim">THEME</span>
+      </h1>
+      <p class="hero-tagline">
+        A retro-futuristic theme inspired by the <span class="text-highlight">USCSS Nostromo</span> spacecraft UI
+      </p>
+      <p class="hero-description">
+        Four meticulously crafted variants capturing the aesthetic of 1970s sci-fi computer interfaces. 
+        High-contrast syntax highlighting for long coding sessions.
+      </p>
+      <div class="hero-actions">
+        <a href="https://marketplace.visualstudio.com/items?itemName=grikomsn.nostromo-theme" class="btn btn-primary" target="_blank" rel="noopener">
+          <span>Install from Marketplace</span>
+          <span class="btn-icon">→</span>
+        </a>
+        <a href="#preview" class="btn btn-secondary">
+          <span>Live Preview</span>
+        </a>
+      </div>
+      <div class="hero-meta">
+        <span class="meta-item">
+          <span class="meta-dot dot-green"></span>
+          Free & Open Source
+        </span>
+        <span class="meta-item">
+          <span class="meta-dot dot-cyan"></span>
+          4 Theme Variants
+        </span>
+        <span class="meta-item">
+          <span class="meta-dot dot-blue"></span>
+          MIT Licensed
+        </span>
+      </div>
+    </div>
+    <div class="hero-grid"></div>
+  </header>
+
+  <!-- Theme Preview Section -->
+  <main id="main-content" role="main">
+    <section id="preview" class="section section-preview" aria-labelledby="preview-heading">
+      <div class="section-container">
+        <h2 id="preview-heading" class="section-title">
+          <span class="text-accent">◈</span> Live Theme Preview
+        </h2>
+        <p class="section-description">
+          Experience the theme directly in your browser. Switch between variants to see how your code will look.
+        </p>
+        
+        <div class="preview-controls" role="tablist" aria-label="Theme variants">
+          <button type="button" class="theme-btn active" data-theme="nostromo-dark" role="tab" aria-selected="true" aria-controls="editor-container">
+            <span class="theme-btn-dot" style="background: #141D22;"></span>
+            <span class="theme-btn-label">Dark</span>
+          </button>
+          <button type="button" class="theme-btn" data-theme="nostromo-dark-modern" role="tab" aria-selected="false" aria-controls="editor-container">
+            <span class="theme-btn-dot" style="background: #1A2026;"></span>
+            <span class="theme-btn-label">Dark Modern</span>
+          </button>
+          <button type="button" class="theme-btn" data-theme="nostromo-light" role="tab" aria-selected="false" aria-controls="editor-container">
+            <span class="theme-btn-dot" style="background: #F5F0E6;"></span>
+            <span class="theme-btn-label">Light</span>
+          </button>
+          <button type="button" class="theme-btn" data-theme="nostromo-light-modern" role="tab" aria-selected="false" aria-controls="editor-container">
+            <span class="theme-btn-dot" style="background: #FAFBFC;"></span>
+            <span class="theme-btn-label">Light Modern</span>
+          </button>
+        </div>
+        
+        <div class="editor-wrapper">
+          <div id="editor-container" class="editor-container" role="region" aria-label="Code editor with theme preview"></div>
+          <div class="editor-info">
+            <span class="editor-lang">TypeScript</span>
+            <span class="editor-status">Powered by Monaco Editor</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="section section-features" aria-labelledby="features-heading">
+      <div class="section-container">
+        <h2 id="features-heading" class="section-title">
+          <span class="text-accent">◈</span> Features
+        </h2>
+        
+        <div class="features-grid">
+          <article class="feature-card">
+            <div class="feature-icon">◉</div>
+            <h3 class="feature-title">Four Variants</h3>
+            <p class="feature-desc">Dark (retro CRT), Dark Modern (polished charcoal), Light (warm cream), Light Modern (clean off-white)</p>
+          </article>
+          
+          <article class="feature-card">
+            <div class="feature-icon">⚡</div>
+            <h3 class="feature-title">High Contrast</h3>
+            <p class="feature-desc">Carefully selected colors for optimal readability during long coding sessions</p>
+          </article>
+          
+          <article class="feature-card">
+            <div class="feature-icon">◇</div>
+            <h3 class="feature-title">Semantic Highlighting</h3>
+            <p class="feature-desc">Full support for VSCode's semantic token highlighting for accurate code coloring</p>
+          </article>
+          
+          <article class="feature-card">
+            <div class="feature-icon">◎</div>
+            <h3 class="feature-title">Terminal Colors</h3>
+            <p class="feature-desc">Matching ANSI color schemes for integrated terminal consistency</p>
+          </article>
+          
+          <article class="feature-card">
+            <div class="feature-icon">◈</div>
+            <h3 class="feature-title">Multi-Language</h3>
+            <p class="feature-desc">Optimized for JavaScript, TypeScript, Python, Go, Rust, and more</p>
+          </article>
+          
+          <article class="feature-card">
+            <div class="feature-icon">◐</div>
+            <h3 class="feature-title">Open Source</h3>
+            <p class="feature-desc">MIT licensed. Contributions welcome on GitHub.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Installation Section -->
+    <section id="installation" class="section section-install" aria-labelledby="install-heading">
+      <div class="section-container">
+        <h2 id="install-heading" class="section-title">
+          <span class="text-accent">◈</span> Installation
+        </h2>
+        
+        <div class="install-methods">
+          <div class="install-card">
+            <h3 class="install-title">From VSCode Marketplace</h3>
+            <p class="install-desc">Click the button below to open the marketplace and install directly.</p>
+            <a href="https://marketplace.visualstudio.com/items?itemName=grikomsn.nostromo-theme" class="btn btn-primary" target="_blank" rel="noopener">
+              Install Nostromo Theme
+            </a>
+          </div>
+          
+          <div class="install-card">
+            <h3 class="install-title">From VSCode</h3>
+            <p class="install-desc">Open VSCode, search "Nostromo Theme" in the Extensions panel, and click Install.</p>
+            <div class="code-block">
+              <code>Cmd/Ctrl+Shift+X → Search "Nostromo Theme" → Install</code>
+            </div>
+          </div>
+          
+          <div class="install-card">
+            <h3 class="install-title">Command Line</h3>
+            <p class="install-desc">Use the code command to install from your terminal.</p>
+            <div class="code-block">
+              <code>code --install-extension grikomsn.nostromo-theme</code>
+              <button type="button" class="copy-btn" aria-label="Copy command" onclick="navigator.clipboard.writeText('code --install-extension grikomsn.nostromo-theme')">📋</button>
+            </div>
+          </div>
+        </div>
+        
+        <div class="install-activate">
+          <h3 class="install-subtitle">Activate the Theme</h3>
+          <p>After installation, activate the theme using the Command Palette:</p>
+          <div class="code-block code-block-large">
+            <code>Cmd/Ctrl+K Cmd/Ctrl+T → Select "Nostromo Theme"</code>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Color Palette Section -->
+    <section id="palette" class="section section-palette" aria-labelledby="palette-heading">
+      <div class="section-container">
+        <h2 id="palette-heading" class="section-title">
+          <span class="text-accent">◈</span> Color Palette
+        </h2>
+        <p class="section-description">
+          Each variant maintains consistent accent colors while providing different background contexts.
+        </p>
+        
+        <div class="palette-tabs">
+          <button type="button" class="palette-tab active" data-palette="dark">Dark</button>
+          <button type="button" class="palette-tab" data-palette="dark-modern">Dark Modern</button>
+          <button type="button" class="palette-tab" data-palette="light">Light</button>
+          <button type="button" class="palette-tab" data-palette="light-modern">Light Modern</button>
+        </div>
+        
+        <div class="palette-content">
+          <div class="palette-grid" id="palette-dark">
+            <div class="color-item">
+              <div class="color-swatch" style="background: #141D22;"></div>
+              <code class="color-hex">#141D22</code>
+              <span class="color-label">Background</span>
+            </div>
+            <div class="color-item">
+              <div class="color-swatch" style="background: #A5FBFF;"></div>
+              <code class="color-hex">#A5FBFF</code>
+              <span class="color-label">Foreground</span>
+            </div>
+            <div class="color-item">
+              <div class="color-swatch" style="background: #3df2ad;"></div>
+              <code class="color-hex">#3df2ad</code>
+              <span class="color-label">Functions</span>
+            </div>
+            <div class="color-item">
+              <div class="color-swatch" style="background: #dd513c;"></div>
+              <code class="color-hex">#dd513c</code>
+              <span class="color-label">Keywords</span>
+            </div>
+            <div class="color-item">
+              <div class="color-swatch" style="background: #34A2DF;"></div>
+              <code class="color-hex">#34A2DF</code>
+              <span class="color-label">Terminal</span>
+            </div>
+            <div class="color-item">
+              <div class="color-swatch" style="background: #FFFF84;"></div>
+              <code class="color-hex">#FFFF84</code>
+              <span class="color-label">Warnings</span>
+            </div>
+          </div>
+          
+          <div class="palette-grid hidden" id="palette-dark-modern">
+            <div class="color-item">
+              <div class="color-swatch" style="background: #1A2026;"></div>
+              <code class="color-hex">#1A2026</code>
+              <span class="color-label">Background</span>
+            </div>
+            <div class="color-item">
+              <div class="color-swatch" style="background: #A5FBFF;"></div>
+              <code class="color-hex">#A5FBFF</code>
+              <span class="color-label">Foreground</span>
+            </div>
+            <div class="color-item">
+              <div class="color-swatch" style="background: #4DFFA8;"></div>
+              <code class="color-hex">#4DFFA8</code>
+              <span class="color-label">Functions</span>
+            </div>
+            <div class="color-item">
+              <div class="color-swatch" style="background: #E85A45;"></div>
+              <code class="color-hex">#E85A45</code>
+              <span class="color-label">Keywords</span>
+            </div>
+            <div class="color-item">
+              <div class="color-swatch" style="background: #5AC0FF;"></div>
+              <code class="color-hex">#5AC0FF</code>
+              <span class="color-label">Terminal</span>
+            </div>
+            <div class="color-item">
+              <div class="color-swatch" style="background: #D4C440;"></div>
+              <code class="color-hex">#D4C440</code>
+              <span class="color-label">Warnings</span>
+            </div>
+          </div>
+          
+          <div class="palette-grid hidden" id="palette-light">
+            <div class="color-item">
+              <div class="color-swatch" style="background: #F5F0E6;"></div>
+              <code class="color-hex">#F5F0E6</code>
+              <span class="color-label">Background</span>
+            </div>
+            <div class="color-item">
+              <div class="color-swatch" style="background: #0D3D3F;"></div>
+              <code class="color-hex">#0D3D3F</code>
+              <span class="color-label">Foreground</span>
+            </div>
+            <div class="color-item">
+              <div class="color-swatch" style="background: #1A8C5E;"></div>
+              <code class="color-hex">#1A8C5E</code>
+              <span class="color-label">Functions</span>
+            </div>
+            <div class="color-item">
+              <div class="color-swatch" style="background: #B54230;"></div>
+              <code class="color-hex">#B54230</code>
+              <span class="color-label">Keywords</span>
+            </div>
+            <div class="color-item">
+              <div class="color-swatch" style="background: #2A6A9C;"></div>
+              <code class="color-hex">#2A6A9C</code>
+              <span class="color-label">Terminal</span>
+            </div>
+            <div class="color-item">
+              <div class="color-swatch" style="background: #9A8A20;"></div>
+              <code class="color-hex">#9A8A20</code>
+              <span class="color-label">Warnings</span>
+            </div>
+          </div>
+          
+          <div class="palette-grid hidden" id="palette-light-modern">
+            <div class="color-item">
+              <div class="color-swatch" style="background: #FAFBFC;"></div>
+              <code class="color-hex">#FAFBFC</code>
+              <span class="color-label">Background</span>
+            </div>
+            <div class="color-item">
+              <div class="color-swatch" style="background: #0D3D3F;"></div>
+              <code class="color-hex">#0D3D3F</code>
+              <span class="color-label">Foreground</span>
+            </div>
+            <div class="color-item">
+              <div class="color-swatch" style="background: #1A8C5E;"></div>
+              <code class="color-hex">#1A8C5E</code>
+              <span class="color-label">Functions</span>
+            </div>
+            <div class="color-item">
+              <div class="color-swatch" style="background: #B54230;"></div>
+              <code class="color-hex">#B54230</code>
+              <span class="color-label">Keywords</span>
+            </div>
+            <div class="color-item">
+              <div class="color-swatch" style="background: #2A6A9C;"></div>
+              <code class="color-hex">#2A6A9C</code>
+              <span class="color-label">Terminal</span>
+            </div>
+            <div class="color-item">
+              <div class="color-swatch" style="background: #9A8A20;"></div>
+              <code class="color-hex">#9A8A20</code>
+              <span class="color-label">Warnings</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <span class="footer-logo">◈ NOSTROMO</span>
+        <p class="footer-tagline">Retro-futuristic VSCode theme</p>
+      </div>
+      <div class="footer-links">
+        <a href="https://marketplace.visualstudio.com/items?itemName=grikomsn.nostromo-theme" target="_blank" rel="noopener">Marketplace</a>
+        <a href="https://github.com/grikomsn/vscode-nostromo-theme" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://github.com/grikomsn/vscode-nostromo-theme/issues" target="_blank" rel="noopener">Issues</a>
+        <a href="https://github.com/grikomsn/vscode-nostromo-theme/blob/main/LICENSE" target="_blank" rel="noopener">License</a>
+      </div>
+      <p class="footer-copyright">
+        © 2024 Griko Nibras. Released under MIT License.
+        <br>
+        <span class="footer-disclaimer">Inspired by the USCSS Nostromo from Alien (1979).</span>
+      </p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/monaco-loader.js"></script>
+</body>
+</html>
