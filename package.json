@@ -48,7 +48,7 @@
   "homepage": "https://github.com/grikomsn/vscode-nostromo-theme#readme",
   "license": "MIT",
   "scripts": {
-    "deploy": "vsce publish --yarn",
+    "deploy": "vsce publish",
     "package": "vsce package"
   },
   "devDependencies": {
