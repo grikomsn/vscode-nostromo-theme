@@ -23,10 +23,6 @@
   --space-md: 1.5rem;
   --space-lg: 2rem;
   --space-xl: 3rem;
-
-  /* Transitions */
-  --transition-fast: 150ms ease;
-  --transition-base: 250ms ease;
 }
 
 /* Reset & Base */
@@ -153,7 +149,6 @@ button:hover {
 
 .btn-primary:hover {
   box-shadow: 0 0 12px rgba(61, 242, 173, 0.4);
-  transform: translateY(-1px);
 }
 
 /* Editor container glow - minimal */
@@ -269,7 +264,6 @@ button:hover {
   cursor: pointer;
   font-size: 0.9rem;
   font-weight: 400;
-  transition: all var(--transition-fast);
   font-family: var(--font-vt323);
 }
 
@@ -337,7 +331,6 @@ button:hover {
   text-decoration: none;
   font-weight: 400;
   font-size: 1.1rem;
-  transition: all var(--transition-base);
   border: 2px solid transparent;
   cursor: pointer;
   text-transform: uppercase;
@@ -354,7 +347,6 @@ button:hover {
   background: var(--nostromo-cyan);
   border-color: var(--nostromo-cyan);
   box-shadow: 0 0 12px rgba(61, 242, 173, 0.4);
-  transform: translateY(-1px);
 }
 
 .cta-hint {
@@ -384,7 +376,6 @@ button:hover {
 .footer a {
   color: #6ba3a5;
   text-decoration: none;
-  transition: color var(--transition-fast);
 }
 
 .footer a:hover {
