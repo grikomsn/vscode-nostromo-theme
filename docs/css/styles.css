@@ -15,8 +15,7 @@
   --nostromo-yellow: #FFFF84;
 
   /* Typography */
-  --font-mono: 'Fira Code', 'JetBrains Mono', 'SF Mono', 'Consolas', monospace;
-  --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-vt323: 'VT323', monospace;
 
   /* Spacing */
   --space-xs: 0.5rem;
@@ -43,10 +42,11 @@ html {
 }
 
 body {
-  font-family: var(--font-sans);
+  font-family: var(--font-vt323);
+  font-size: 18px;
   background: #0a0e10;
   color: var(--nostromo-cyan);
-  line-height: 1.6;
+  line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   min-height: 100vh;
   display: flex;
@@ -86,12 +86,12 @@ body {
 }
 
 .hero-title {
-  font-family: var(--font-mono);
-  font-size: clamp(2rem, 6vw, 3.5rem);
-  font-weight: 700;
-  letter-spacing: 4px;
+  font-family: var(--font-vt323);
+  font-size: clamp(2.5rem, 8vw, 5rem);
+  font-weight: 400;
+  letter-spacing: 2px;
   margin-bottom: var(--space-sm);
-  line-height: 1.1;
+  line-height: 1;
 }
 
 .text-cyan {
@@ -146,7 +146,7 @@ body {
   font-size: 0.85rem;
   font-weight: 500;
   transition: all var(--transition-fast);
-  font-family: var(--font-sans);
+  font-family: var(--font-vt323);
 }
 
 .theme-btn:hover {
@@ -190,9 +190,9 @@ body {
   padding: 8px 16px;
   background: var(--nostromo-dark-bg-secondary);
   border-top: 1px solid var(--nostromo-dark-border);
-  font-size: 0.75rem;
+  font-size: 0.9rem;
   color: #6ba3a5;
-  font-family: var(--font-mono);
+  font-family: var(--font-vt323);
 }
 
 .editor-info span:first-child {
@@ -237,7 +237,7 @@ body {
 }
 
 .cta-hint code {
-  font-family: var(--font-mono);
+  font-family: var(--font-vt323);
   background: var(--nostromo-dark-bg-secondary);
   padding: 2px 8px;
   border-radius: 4px;
